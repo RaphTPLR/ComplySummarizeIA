@@ -12,6 +12,7 @@ import { PricingCTA } from './components/PricingCTA'
 
 // Hooks
 import { usePricingAnimations } from '@/hooks/usePricingAnimations'
+import { Footer } from '@/components/layout/Footer' 
 
 export default function Pricing() {
     // Refs for GSAP animations
@@ -19,6 +20,7 @@ export default function Pricing() {
     const pricingRef = useRef<HTMLDivElement>(null)
     const faqRef = useRef<HTMLDivElement>(null)
     const ctaRef = useRef<HTMLDivElement>(null)
+    const footerRef = useRef<HTMLDivElement>(null)
 
     // Initialize GSAP animations
     usePricingAnimations({
@@ -54,6 +56,7 @@ export default function Pricing() {
 
             {/* CTA Section */}
             <PricingCTA ctaRef={ctaRef} />
+            <Footer footerRef={footerRef} />
         </PageLayout>
     )
 }

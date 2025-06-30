@@ -12,6 +12,7 @@ import { DemoCTA } from './components/DemoCTA'
 
 // Hooks
 import { useDemoAnimations } from '@/hooks/useDemoAnimations'
+import { Footer } from '@/components/layout/Footer'
 
 export default function Demo() {
     // Refs for GSAP animations
@@ -19,7 +20,7 @@ export default function Demo() {
     const stepsRef = useRef<HTMLDivElement>(null)
     const resultsRef = useRef<HTMLDivElement>(null)
     const ctaRef = useRef<HTMLDivElement>(null)
-
+    const footerRef = useRef<HTMLDivElement>(null)
     // Initialize GSAP animations
     useDemoAnimations({
         heroRef,
@@ -54,6 +55,7 @@ export default function Demo() {
 
             {/* CTA Section */}
             <DemoCTA ctaRef={ctaRef} />
+            <Footer footerRef={footerRef} />
         </PageLayout>
     )
 }

@@ -8,7 +8,7 @@ import { Header } from '@/components/layout/Header'
 import { HeroSection } from './components/HeroSection'
 import { FeaturesSection } from './components/FeaturesSection'
 import { CTASection } from './components/CTASection'
-import { Footer } from './components/Footer'
+import { Footer } from '@/components/layout/Footer'
 
 // Hooks
 import { useGSAPAnimations } from '@/hooks/useGSAPAnimations'

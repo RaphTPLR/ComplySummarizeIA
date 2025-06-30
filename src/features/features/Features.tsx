@@ -12,6 +12,7 @@ import { FeaturesCTA } from './components/FeaturesCTA'
 
 // Hooks
 import { useFeaturesAnimations } from '@/hooks/useFeaturesAnimations'
+import { Footer } from '@/components/layout/Footer'
 
 export default function Features() {
     // Refs for GSAP animations
@@ -19,6 +20,7 @@ export default function Features() {
     const gridRef = useRef<HTMLDivElement>(null)
     const comparisonRef = useRef<HTMLDivElement>(null)
     const ctaRef = useRef<HTMLDivElement>(null)
+    const footerRef = useRef<HTMLDivElement>(null)
 
     // Initialize GSAP animations
     useFeaturesAnimations({
@@ -54,6 +56,9 @@ export default function Features() {
 
             {/* CTA Section */}
             <FeaturesCTA ctaRef={ctaRef} />
+
+            {/* Footer */}
+            <Footer footerRef={footerRef} />
         </PageLayout>
     )
 }
