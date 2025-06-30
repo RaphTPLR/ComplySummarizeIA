@@ -65,9 +65,9 @@ export const ParticleField = () => {
             particlesMesh.rotation.x += 0.001
             particlesMesh.rotation.y += 0.002
 
-            // Mouse interaction
-            particlesMesh.rotation.x += mouseY * 0.0001
-            particlesMesh.rotation.y += mouseX * 0.0001
+            // Mouse interaction (beaucoup plus doux)
+            particlesMesh.rotation.x += mouseY * 0.00001
+            particlesMesh.rotation.y += mouseX * 0.00001
 
             renderer.render(scene, camera)
         }

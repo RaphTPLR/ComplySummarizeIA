@@ -1,7 +1,7 @@
 import type React from "react"
 import { HTMLMotionProps, motion } from "framer-motion"
 
-type ButtonVariant = "primary" | "secondary" | "danger" | "success" | "warning"
+type ButtonVariant = "primary" | "secondary" | "danger" | "success" | "warning" | "outline"
 
 interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, keyof HTMLMotionProps<"button">>,
     HTMLMotionProps<"button"> {
@@ -17,6 +17,7 @@ const variantStyles: Record<ButtonVariant, string> = {
     danger: "bg-red-600 hover:bg-red-700 focus:ring-red-500 text-white",
     success: "bg-green-600 hover:bg-green-700 focus:ring-green-500 text-white",
     warning: "bg-yellow-500 hover:bg-yellow-600 focus:ring-yellow-400 text-black",
+    outline: "border border-gray-600 bg-transparent text-gray-300 hover:text-pink-400 text-lg px-8 py-4 group"
 }
 
 export const Button: React.FC<ButtonProps> = ({

@@ -23,3 +23,28 @@ body {
     --radius: 0.5rem;
   }
 }
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
+
+::selection {
+  background-color: #c084fc;
+  color: #fff;
+}
+
+.text-selection {
+  user-select: none;
+}
+
+  
