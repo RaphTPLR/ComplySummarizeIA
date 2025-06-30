@@ -3,6 +3,7 @@ import { ArrowRight, ChevronDown, Play, Scan, Upload } from 'lucide-react'
 import { RefObject } from 'react'
 import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
+import { useNavigate } from 'react-router-dom'
 
 interface HeroSectionProps {
     heroRef: RefObject<HTMLDivElement>
@@ -21,6 +22,8 @@ export const HeroSection = ({
     floatAnimation,
     uploadAreaVariants
 }: HeroSectionProps) => {
+    const navigate = useNavigate()
+    
     return (
         <motion.section 
             ref={heroRef}
@@ -83,7 +86,7 @@ export const HeroSection = ({
                                 <p className="text-gray-300 mb-6 max-w-md">
                                     Support pour PDF, DOCX, TXT et plus. Contrats, politiques, réglementations, rapports d'audit - nous gérons tout.
                                 </p>
-                                <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-lg px-8 py-4 group">
+                                <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-lg px-8 py-4 group" onClick={() => navigate('/home')}>
                                     <Upload className="mr-2 w-5 h-5" />
                                     Choisir un Fichier ou Déposer Ici
                                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -100,7 +103,8 @@ export const HeroSection = ({
                 >
                     <Button 
                         variant="outline" 
-                        className="border border-gray-600 bg-transparent text-gray-300 hover:text-pink-400 text-lg px-8 py-4 group"
+                        className="border border-gray-600 bg-transparent text-gray-300 hover:text-pink-400 text-lg px-8 py-4 group" 
+                        onClick={() => navigate('/home')}
                     >
                         <Play className="mr-2 w-5 h-5" />
                         Voir l'IA en Action

@@ -11,6 +11,7 @@ import Profile from '@/features/user/Profile';
 import PrivateRoutes from '@/routes/PrivateRoutes';
 import PublicRoutes from '@/routes/PublicRoutes';
 import { Navigate, Route, Routes } from 'react-router-dom';
+import ResumeTool from '@/features/resumetool/ResumeTool';
 
 const AppRoutes = () => {
   // const { isAuthenticated } = useAuthStore();
@@ -38,11 +39,12 @@ const AppRoutes = () => {
 
           {/* Routes privées */}
           <Route element={<PrivateRoutes />}>
-            <Route path="/profile" element={<Profile />} />
+            {/* <Route path="/profile" element={<Profile />} /> */}
             <Route path="/landing" element={<Landing />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/demo" element={<Demo />} />
             <Route path="/features" element={<Features />} />
+            <Route path="/home" element={<ResumeTool />} />
           </Route>
 
           {/* Route par défaut */}

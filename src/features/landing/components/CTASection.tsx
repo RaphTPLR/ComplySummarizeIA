@@ -1,12 +1,13 @@
 import { ArrowRight, Shield, Star, TrendingUp, Upload, Users } from 'lucide-react'
 import { RefObject } from 'react'
 import { Button } from '@/components/ui/Button'
-
+import { useNavigate } from 'react-router-dom'
 interface CTASectionProps {
     ctaRef: RefObject<HTMLDivElement>
 }
 
 export const CTASection = ({ ctaRef }: CTASectionProps) => {
+    const navigate = useNavigate()
     return (
         <section ref={ctaRef} className="relative z-10 px-6 py-20">
             <div className="max-w-4xl mx-auto text-center">
@@ -44,6 +45,7 @@ export const CTASection = ({ ctaRef }: CTASectionProps) => {
                             <div className="cta-buttons flex flex-col sm:flex-row gap-4 justify-center mb-10">
                                 <Button 
                                     className="bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 hover:from-purple-700 hover:via-blue-700 hover:to-cyan-700 text-white text-lg px-10 py-4 rounded-xl group shadow-lg hover:shadow-2xl transition-all duration-300"
+                                    onClick={() => navigate('/home')}
                                 >
                                     <Upload className="mr-3 w-5 h-5" />
                                     Commencer l'Analyse de Conformité
@@ -52,6 +54,7 @@ export const CTASection = ({ ctaRef }: CTASectionProps) => {
                                 <Button 
                                     variant="secondary" 
                                     className="border-2 border-white/20 bg-white/5 backdrop-blur-sm text-white hover:bg-white/10 hover:border-white/30 text-lg px-10 py-4 rounded-xl transition-all duration-300"
+                                    onClick={() => navigate('/pricing')}
                                 >
                                     Voir les Plans Entreprise
                                 </Button>

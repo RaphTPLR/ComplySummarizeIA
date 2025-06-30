@@ -1,17 +1,16 @@
 'use client'
 
+import { useLogin } from "@/api/queries/authQueries"
+import { PageLayout } from '@/components/layout/PageLayout'
+import { Button } from "@/components/ui/Button"
+import { Input } from "@/components/ui/Input"
+import { loginSchema, type LoginFormData } from "@/validators/authValidators"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { motion } from "framer-motion"
+import { ArrowRight, Lock, Mail, Shield, Target } from 'lucide-react'
 import { useRef } from 'react'
 import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { loginSchema, type LoginFormData } from "@/validators/authValidators"
 import { Link } from "react-router-dom"
-import { motion } from "framer-motion"
-import { useLogin } from "@/api/queries/authQueries"
-import { Input } from "@/components/ui/Input"
-import { Button } from "@/components/ui/Button"
-import { PageLayout } from '@/components/layout/PageLayout'
-import { Header } from '@/components/layout/Header'
-import { Target, Mail, Lock, ArrowRight, Shield } from 'lucide-react'
 
 export default function Login() {
   const loginRef = useRef<HTMLDivElement>(null)
@@ -31,16 +30,6 @@ export default function Login() {
       loginUser(data);
     } catch (error) {
       console.error(error)
-    }
-  }
-
-  // Animation configuration for header
-  const pulseAnimation = {
-    scale: [1, 1.05, 1],
-    transition: {
-      duration: 2,
-      repeat: Infinity,
-      ease: "easeInOut"
     }
   }
 

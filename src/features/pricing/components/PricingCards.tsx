@@ -98,7 +98,7 @@ export const PricingCards = ({ pricingRef }: PricingCardsProps) => {
                     {plans.map((plan) => (
                         <div key={plan.name} className={`pricing-card relative ${plan.popular ? 'scale-105' : ''}`}>
                             {plan.popular && (
-                                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                                <div className="absolute z-10 -top-4 left-1/2 transform -translate-x-1/2">
                                     <Badge className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white">
                                         <Sparkles className="w-3 h-3 mr-1" />
                                         Plus Populaire

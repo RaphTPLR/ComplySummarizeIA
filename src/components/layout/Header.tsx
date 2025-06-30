@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Target } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 interface HeaderProps {
     pulseAnimation: any
@@ -9,7 +9,8 @@ interface HeaderProps {
 
 export const Header = ({ pulseAnimation }: HeaderProps) => {
     const location = useLocation()
-    
+    const navigate = useNavigate()
+
     // Helper function to determine if a route is active
     const isActiveRoute = (path: string) => {
         if (path === '/landing') {
@@ -93,7 +94,7 @@ export const Header = ({ pulseAnimation }: HeaderProps) => {
                     </Link>
                 </div>
                 <div className="flex justify-end col-span-1"></div>
-                <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 ">
+                <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 " onClick={() => navigate('/home')}>
                     Essai Gratuit
                 </Button>
             </nav>

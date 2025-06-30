@@ -1,13 +1,15 @@
 import { ArrowRight, Play, Upload, Zap } from 'lucide-react'
 import { RefObject } from 'react'
 import { Button } from '@/components/ui/Button'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 interface DemoCTAProps {
     ctaRef: RefObject<HTMLDivElement>
 }
 
 export const DemoCTA = ({ ctaRef }: DemoCTAProps) => {
+    const navigate = useNavigate()
+    
     return (
         <section ref={ctaRef} className="relative z-10 px-6 py-20">
             <div className="max-w-4xl mx-auto text-center">
@@ -46,6 +48,7 @@ export const DemoCTA = ({ ctaRef }: DemoCTAProps) => {
                             <div className="cta-buttons flex flex-col sm:flex-row gap-4 justify-center mb-10">
                                 <Button 
                                     className="bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 hover:from-purple-700 hover:via-blue-700 hover:to-cyan-700 text-white text-lg px-10 py-4 rounded-xl group shadow-lg hover:shadow-2xl transition-all duration-300"
+                                    onClick={() => navigate('/home')}
                                 >
                                     <Upload className="mr-3 w-5 h-5" />
                                     Commencer l'Analyse Gratuite

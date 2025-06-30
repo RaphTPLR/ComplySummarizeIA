@@ -47,4 +47,18 @@ body {
   user-select: none;
 }
 
+.scrollbar-simple::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-simple::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-simple::-webkit-scrollbar-thumb {
+  background: #c084fc;
+  border-radius: 3px;
+}
+
+
   

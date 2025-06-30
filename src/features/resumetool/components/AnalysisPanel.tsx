@@ -1,0 +1,112 @@
+import { motion } from 'framer-motion'
+import { Brain, FileText, Target, Zap, Download, Share2, Loader } from 'lucide-react'
+import { Button } from '@/components/ui/Button'
+import { AnalysisResult } from '../types'
+
+interface AnalysisPanelProps {
+    isProcessing: boolean
+    analysisResult: AnalysisResult | null
+}
+
+export const AnalysisPanel = ({ isProcessing, analysisResult }: AnalysisPanelProps) => {
+    return (
+        <motion.div
+            className="lg:col-span-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+        >
+            <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
+                <Brain className="w-5 h-5 mr-2" />
+                Analyse IA
+            </h3>
+
+            <div className="space-y-6">
+                {isProcessing ? (
+                    <div className="text-center py-8">
+                        <Loader className="w-8 h-8 text-purple-400 mx-auto mb-4 animate-spin" />
+                        <p className="text-gray-300">Analyse en cours...</p>
+                    </div>
+                ) : analysisResult ? (
+                    <>
+                        {/* Summary */}
+                        <div>
+                            <h4 className="font-semibold text-white mb-2 flex items-center">
+                                <FileText className="w-4 h-4 mr-2 text-blue-400" />
+                                Résumé
+                            </h4>
+                            <p className="text-sm text-gray-300 leading-relaxed">
+                                {analysisResult.summary}
+                            </p>
+                        </div>
+
+                        {/* Key Points */}
+                        <div>
+                            <h4 className="font-semibold text-white mb-2 flex items-center">
+                                <Target className="w-4 h-4 mr-2 text-emerald-400" />
+                                Points Clés
+                            </h4>
+                            <ul className="space-y-2">
+                                {analysisResult.keyPoints.map((point, index) => (
+                                    <li key={index} className="text-sm text-gray-300 flex items-start">
+                                        <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
+                                        {point}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Suggested Actions */}
+                        <div>
+                            <h4 className="font-semibold text-white mb-2 flex items-center">
+                                <Zap className="w-4 h-4 mr-2 text-yellow-400" />
+                                Actions Suggérées
+                            </h4>
+                            <ul className="space-y-2">
+                                {analysisResult.suggestedActions.map((action, index) => (
+                                    <li key={index} className="text-sm text-gray-300 flex items-start">
+                                        <span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
+                                        {action}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Compliance Score */}
+                        <div className="p-4 bg-white/5 rounded-lg">
+                            <h4 className="font-semibold text-white mb-2">Score de Conformité</h4>
+                            <div className="flex items-center space-x-3">
+                                <div className="flex-1 bg-gray-700 rounded-full h-2">
+                                    <div
+                                        className="bg-gradient-to-r from-emerald-500 to-green-500 h-2 rounded-full"
+                                        style={{ width: `${analysisResult.complianceScore}%` }}
+                                    ></div>
+                                </div>
+                                <span className="text-white font-medium">{analysisResult.complianceScore}%</span>
+                            </div>
+                        </div>
+
+                        {/* Export Options */}
+                        <div className="space-y-2">
+                            <Button className="w-full bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white py-2 text-sm">
+                                <Download className="w-4 h-4 mr-2" />
+                                Exporter PDF
+                            </Button>
+                            <Button variant="secondary" className="w-full border-white/20 bg-white/5 text-white hover:bg-white/10 py-2 text-sm">
+                                <Share2 className="w-4 h-4 mr-2" />
+                                Partager
+                            </Button>
+                        </div>
+                    </>
+                ) : (
+                    <div className="text-center py-8">
+                        <Brain className="w-8 h-8 text-gray-400 mx-auto mb-4" />
+                        <p className="text-gray-400 text-sm">
+                            Chargez des documents et lancez l'analyse pour voir les résultats
+                        </p>
+                    </div>
+                )}
+            </div>
+        </motion.div>
+    )
+} 
