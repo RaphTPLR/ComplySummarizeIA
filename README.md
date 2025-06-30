@@ -238,22 +238,6 @@ src/
 - [ ] Application mobile
 - [ ] Intégrations tierces
 
-## 🤝 Contribuer
-
-Les contributions sont les bienvenues ! Voici comment participer :
-
-1. **Fork** le projet
-2. **Créez** une branche feature (`git checkout -b feature/amazing-feature`)
-3. **Committez** vos changements (`git commit -m 'Add amazing feature'`)
-4. **Poussez** vers la branche (`git push origin feature/amazing-feature`)
-5. **Ouvrez** une Pull Request
-
-### Règles de Contribution
-- **ESLint** : 0 warnings maximum
-- **Prettier** : Formatage automatique requis
-- **TypeScript** : Types stricts obligatoires
-- **Tests** : Couverture minimale 80% pour `/src/components`
-
 ## 📄 Licence
 
 Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
