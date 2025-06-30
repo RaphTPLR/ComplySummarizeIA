@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Zap, Star } from 'lucide-react'
+import { Zap, Star, ArrowDown } from 'lucide-react'
 import { RefObject } from 'react'
 import { Badge } from '@/components/ui/Badge'
 
@@ -84,8 +84,8 @@ export const FeaturesHero = ({ heroRef }: FeaturesHeroProps) => {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.6 }}
                 >
-                    <p className="text-sm text-gray-500">
-                        👇 Explorez chaque fonctionnalité en détail ci-dessous
+                    <p className="text-sm text-gray-500 flex items-center justify-center gap-2">
+                        <span className="animate-bounce"><ArrowDown size={16} /></span> Explorez chaque fonctionnalité en détail ci-dessous
                     </p>
                 </motion.div>
             </div>
