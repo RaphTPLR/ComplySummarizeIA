@@ -263,19 +263,19 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 ## 🎨 Captures d'écran
 
 ### Page d'Accueil
-![Landing Page](https://goopics.net/i/s3q1aa)
+![Landing Page](https://i.goopics.net/s3q1aa.png)
 
 ### Pages Présentation des features
-![Resume Tool](https://goopics.net/i/owq9ic)
+![Resume Tool](https://i.goopics.net/owq9ic.png)
 
 ### Page Démo Interactive
-![Demo Page](https://goopics.net/i/dlkx18)
+![Demo Page](https://i.goopics.net/dlkx18.png)
 
 ### Page de Pricing
-![Demo Page](https://goopics.net/i/6bo81y)
+![Demo Page](https://i.goopics.net/6bo81y.png)
 
 ### Page Tool
-![Demo Page](https://goopics.net/i/x7zokp)
+![Demo Page](https://i.goopics.net/x7zokp.png)
 
 ---
 
