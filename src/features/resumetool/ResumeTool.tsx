@@ -3,7 +3,6 @@
 import { PageLayout } from '@/components/layout/PageLayout'
 import { Brain, FileText, Target, Zap } from 'lucide-react'
 import { useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 
 // Components
 import { AnalysisPanel, ToolHeader, ToolsPanel, UploadPanel } from './components'
@@ -13,7 +12,6 @@ import type { AnalysisResult, Tool } from './types'
 
 export default function ResumeTool() {
     const toolRef = useRef<HTMLDivElement>(null)
-    const navigate = useNavigate()
     const [uploadedFiles, setUploadedFiles] = useState<File[]>([])
     const [selectedTool, setSelectedTool] = useState('analyze')
     const [isProcessing, setIsProcessing] = useState(false)
