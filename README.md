@@ -1,4 +1,4 @@
-# React TSX Template
+# ComplySummarizeIA
 
 Ce projet est un template de démarrage pour une application React utilisant TypeScript, configurée avec Vite pour un développement rapide et TailwindCSS pour le style.
 
@@ -136,5 +136,4 @@ Les contributions sont les bienvenues ! Pour toute suggestion d'amélioration, v
 
 Développez votre application avec ce template et personnalisez-le selon vos besoins pour un démarrage rapide 🚀 !
 
-Ce `README.md` donne aux utilisateurs toutes les informations nécessaires pour démarrer, comprendre la structure, et personnaliser leur projet. 
-
+Ce `README.md` donne aux utilisateurs toutes les informations nécessaires pour démarrer, comprendre la structure, et personnaliser leur projet.
