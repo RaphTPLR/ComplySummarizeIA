@@ -18,10 +18,10 @@ export const FeaturesSection = ({ featuresRef }: FeaturesSectionProps) => {
                     viewport={{ once: true }}
                 >
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                        Why Choose ComplySummarize IA?
+                        Pourquoi Choisir ComplySummarize IA ?
                     </h2>
                     <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                        The most advanced compliance document analysis platform powered by cutting-edge AI
+                        La plateforme d'analyse de documents de conformité la plus avancée, alimentée par une IA de pointe
                     </p>
                 </motion.div>
 
@@ -38,10 +38,10 @@ export const FeaturesSection = ({ featuresRef }: FeaturesSectionProps) => {
                                     <Clock className="w-7 h-7 text-white" />
                                 </div>
                                 <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-purple-300 transition-colors">
-                                    Real-Time Analysis
+                                    Analyse en Temps Réel
                                 </h3>
                                 <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
-                                    Instant compliance risk assessment and regulatory gap analysis. Get results in under 30 seconds with AI precision.
+                                    Évaluation instantanée des risques de conformité et analyse des écarts réglementaires. Obtenez des résultats en moins de 30 secondes avec une précision IA.
                                 </p>
                             </div>
 
@@ -63,10 +63,10 @@ export const FeaturesSection = ({ featuresRef }: FeaturesSectionProps) => {
                                     <Shield className="w-7 h-7 text-white" />
                                 </div>
                                 <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-blue-300 transition-colors">
-                                    Multi-Regulatory Support
+                                    Support Multi-Réglementaire
                                 </h3>
                                 <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
-                                    GDPR, SOX, HIPAA, PCI-DSS, and 50+ other compliance frameworks. Stay ahead of evolving regulations.
+                                    RGPD, SOX, HIPAA, PCI-DSS et plus de 50 autres cadres de conformité. Restez à la pointe des réglementations évolutives.
                                 </p>
                             </div>
 
@@ -88,10 +88,10 @@ export const FeaturesSection = ({ featuresRef }: FeaturesSectionProps) => {
                                     <Zap className="w-7 h-7 text-white" />
                                 </div>
                                 <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-emerald-300 transition-colors">
-                                    Smart Insights & Actions
+                                    Insights Intelligents & Actions
                                 </h3>
                                 <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
-                                    AI-generated summaries, risk scores, and actionable recommendations to improve your compliance posture.
+                                    Résumés générés par IA, scores de risque et recommandations exploitables pour améliorer votre posture de conformité.
                                 </p>
                             </div>
 

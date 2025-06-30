@@ -33,7 +33,7 @@ export const HeroSection = ({
                 <motion.div variants={itemVariants} className="mb-6">
                     <Badge className="bg-gradient-to-r from-purple-600 to-blue-600 text-white">
                         <Scan className="w-4 h-4 mr-2" />
-                        AI-Powered Compliance Analysis
+                        Analyse de Conformité Alimentée par l'IA
                     </Badge>
                 </motion.div>
 
@@ -41,9 +41,9 @@ export const HeroSection = ({
                     variants={itemVariants}
                     className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
                 >
-                    Transform Compliance Documents into
+                    Transformez vos Documents de Conformité en
                     <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent block">
-                        Actionable Intelligence
+                        Intelligence Actionnable
                     </span>
                 </motion.h1>
 
@@ -51,8 +51,9 @@ export const HeroSection = ({
                     variants={itemVariants}
                     className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
                 >
-                    Upload your compliance documents, contracts, and regulations. Our AI instantly extracts key insights, 
-                    identifies risks, and generates comprehensive summaries that keep your business compliant and competitive.
+                    Téléchargez vos documents de conformité, contrats et réglementations. Notre IA extrait instantanément 
+                    les informations clés, identifie les risques et génère des résumés complets pour maintenir votre 
+                    entreprise conforme et compétitive.
                 </motion.p>
 
                 {/* Big Upload CTA */}
@@ -78,13 +79,13 @@ export const HeroSection = ({
                                 <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                                     <Upload className="w-10 h-10 text-white" />
                                 </div>
-                                <h3 className="text-2xl font-bold text-white mb-4">Drop Your Compliance Documents</h3>
+                                <h3 className="text-2xl font-bold text-white mb-4">Déposez vos Documents de Conformité</h3>
                                 <p className="text-gray-300 mb-6 max-w-md">
-                                    Support for PDF, DOCX, TXT, and more. Contracts, policies, regulations, audit reports - we handle it all.
+                                    Support pour PDF, DOCX, TXT et plus. Contrats, politiques, réglementations, rapports d'audit - nous gérons tout.
                                 </p>
                                 <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-lg px-8 py-4 group">
                                     <Upload className="mr-2 w-5 h-5" />
-                                    Choose File or Drop Here
+                                    Choisir un Fichier ou Déposer Ici
                                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </Button>
                             </motion.div>
@@ -102,7 +103,7 @@ export const HeroSection = ({
                         className="border border-gray-600 bg-transparent text-gray-300 hover:text-pink-400 text-lg px-8 py-4 group"
                     >
                         <Play className="mr-2 w-5 h-5" />
-                        Watch AI in Action
+                        Voir l'IA en Action
                     </Button>
                 </motion.div>
 
@@ -112,16 +113,16 @@ export const HeroSection = ({
                     className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto"
                 >
                     <div className="text-center">
-                        <div className="text-3xl font-bold text-white mb-2">99.7%</div>
-                        <div className="text-gray-400">Compliance Accuracy</div>
+                        <div className="text-3xl font-bold text-white mb-2">99,7%</div>
+                        <div className="text-gray-400">Précision de Conformité</div>
                     </div>
                     <div className="text-center">
                         <div className="text-3xl font-bold text-white mb-2">&lt;30s</div>
-                        <div className="text-gray-400">Analysis Time</div>
+                        <div className="text-gray-400">Temps d'Analyse</div>
                     </div>
                     <div className="text-center">
                         <div className="text-3xl font-bold text-white mb-2">24/7</div>
-                        <div className="text-gray-400">Risk Monitoring</div>
+                        <div className="text-gray-400">Surveillance des Risques</div>
                     </div>
                 </motion.div>
             </div>

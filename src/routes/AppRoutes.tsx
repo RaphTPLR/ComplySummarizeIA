@@ -1,16 +1,16 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
-import PrivateRoutes from '@/routes/PrivateRoutes';
-import PublicRoutes from '@/routes/PublicRoutes';
+import { useAutoLogin } from '@/api/queries/authQueries';
+import Loader from '@/components/ui/Loader';
 import Login from '@/features/auth/Login';
 import Register from '@/features/auth/Register';
-import Profile from '@/features/user/Profile';
 import Error from '@/features/Error';
-import Sidebar from '@/components/layout/Sidebar';
-import { useAuthStore } from '@/stores/authStore';
-import Loader from '@/components/ui/Loader';
-import { useAutoLogin } from '@/api/queries/authQueries';
-import { useEffect } from 'react';
 import Landing from '@/features/landing/Landing';
+import Pricing from '@/features/pricing/Pricing';
+import Demo from '@/features/demo/Demo';
+import Features from '@/features/features/Features';
+import Profile from '@/features/user/Profile';
+import PrivateRoutes from '@/routes/PrivateRoutes';
+import PublicRoutes from '@/routes/PublicRoutes';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
 const AppRoutes = () => {
   // const { isAuthenticated } = useAuthStore();
@@ -40,6 +40,9 @@ const AppRoutes = () => {
           <Route element={<PrivateRoutes />}>
             <Route path="/profile" element={<Profile />} />
             <Route path="/landing" element={<Landing />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/demo" element={<Demo />} />
+            <Route path="/features" element={<Features />} />
           </Route>
 
           {/* Route par défaut */}

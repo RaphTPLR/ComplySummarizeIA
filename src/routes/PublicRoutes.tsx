@@ -5,7 +5,7 @@ const PublicRoutes = () => {
   // const { isAuthenticated } = useAuthStore();
   const isAuthenticated = true;
 
-  return !isAuthenticated ? <Outlet /> : <Navigate to="/profile" replace />;
+  return !isAuthenticated ? <Outlet /> : <Navigate to="/landing" replace />;
 };
 
 export default PublicRoutes;

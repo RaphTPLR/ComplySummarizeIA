@@ -19,7 +19,7 @@ export const Footer = ({ footerRef }: FooterProps) => {
                             <span className="text-xl font-bold text-white">ComplySummarize IA</span>
                         </div>
                         <p className="text-gray-300 mb-6 leading-relaxed">
-                            Transform your compliance documents into actionable intelligence with cutting-edge AI technology.
+                            Transformez vos documents de conformité en intelligence actionnable grâce à une technologie IA de pointe.
                         </p>
                         <div className="flex space-x-4">
                             <a href="#" className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 group">
@@ -36,12 +36,12 @@ export const Footer = ({ footerRef }: FooterProps) => {
 
                     {/* Quick Links */}
                     <div className="footer-element">
-                        <h3 className="text-lg font-semibold text-white mb-6">Quick Links</h3>
+                        <h3 className="text-lg font-semibold text-white mb-6">Liens Rapides</h3>
                         <ul className="space-y-3">
-                            <li><a href="#features" className="text-gray-300 hover:text-purple-400 transition-colors">Features</a></li>
-                            <li><a href="#pricing" className="text-gray-300 hover:text-purple-400 transition-colors">Pricing</a></li>
+                            <li><a href="#features" className="text-gray-300 hover:text-purple-400 transition-colors">Fonctionnalités</a></li>
+                            <li><a href="#pricing" className="text-gray-300 hover:text-purple-400 transition-colors">Tarifs</a></li>
                             <li><a href="#documentation" className="text-gray-300 hover:text-purple-400 transition-colors">Documentation</a></li>
-                            <li><a href="#integrations" className="text-gray-300 hover:text-purple-400 transition-colors">Integrations</a></li>
+                            <li><a href="#integrations" className="text-gray-300 hover:text-purple-400 transition-colors">Intégrations</a></li>
                             <li><a href="#api" className="text-gray-300 hover:text-purple-400 transition-colors">API</a></li>
                         </ul>
                     </div>
@@ -50,11 +50,11 @@ export const Footer = ({ footerRef }: FooterProps) => {
                     <div className="footer-element">
                         <h3 className="text-lg font-semibold text-white mb-6">Support</h3>
                         <ul className="space-y-3">
-                            <li><a href="#help" className="text-gray-300 hover:text-blue-400 transition-colors">Help Center</a></li>
-                            <li><a href="#contact" className="text-gray-300 hover:text-blue-400 transition-colors">Contact Us</a></li>
-                            <li><a href="#status" className="text-gray-300 hover:text-blue-400 transition-colors">System Status</a></li>
-                            <li><a href="#security" className="text-gray-300 hover:text-blue-400 transition-colors">Security</a></li>
-                            <li><a href="#compliance" className="text-gray-300 hover:text-blue-400 transition-colors">Compliance</a></li>
+                            <li><a href="#help" className="text-gray-300 hover:text-blue-400 transition-colors">Centre d'Aide</a></li>
+                            <li><a href="#contact" className="text-gray-300 hover:text-blue-400 transition-colors">Nous Contacter</a></li>
+                            <li><a href="#status" className="text-gray-300 hover:text-blue-400 transition-colors">État du Système</a></li>
+                            <li><a href="#security" className="text-gray-300 hover:text-blue-400 transition-colors">Sécurité</a></li>
+                            <li><a href="#compliance" className="text-gray-300 hover:text-blue-400 transition-colors">Conformité</a></li>
                         </ul>
                     </div>
 
@@ -72,15 +72,15 @@ export const Footer = ({ footerRef }: FooterProps) => {
                                 <div className="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center mr-3">
                                     <Phone className="w-4 h-4 text-blue-400" />
                                 </div>
-                                <span className="text-sm">+1 (555) 123-4567</span>
+                                <span className="text-sm">+33 1 23 45 67 89</span>
                             </div>
                             <div className="flex items-start text-gray-300">
                                 <div className="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center mr-3 mt-0.5">
                                     <MapPin className="w-4 h-4 text-purple-400" />
                                 </div>
                                 <span className="text-sm leading-relaxed">
-                                    123 Innovation Drive<br />
-                                    San Francisco, CA 94107
+                                    123 Avenue de l'Innovation<br />
+                                    75001 Paris, France
                                 </span>
                             </div>
                         </div>
@@ -90,12 +90,12 @@ export const Footer = ({ footerRef }: FooterProps) => {
                 {/* Bottom Section */}
                 <div className="footer-element border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
                     <div className="text-gray-400 text-sm mb-4 md:mb-0">
-                        © 2024 ComplySummarize IA. All rights reserved.
+                        © 2024 ComplySummarize IA. Tous droits réservés.
                     </div>
                     <div className="flex flex-wrap gap-6 text-sm">
-                        <a href="#privacy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
-                        <a href="#terms" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
-                        <a href="#cookies" className="text-gray-400 hover:text-white transition-colors">Cookie Policy</a>
+                        <a href="#privacy" className="text-gray-400 hover:text-white transition-colors">Politique de Confidentialité</a>
+                        <a href="#terms" className="text-gray-400 hover:text-white transition-colors">Conditions d'Utilisation</a>
+                        <a href="#cookies" className="text-gray-400 hover:text-white transition-colors">Politique des Cookies</a>
                     </div>
                 </div>
             </div>

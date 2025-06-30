@@ -1,12 +1,13 @@
-import { ArrowRight, Shield, Star, TrendingUp, Upload, Users } from 'lucide-react'
+import { ArrowRight, Play, Upload, Zap } from 'lucide-react'
 import { RefObject } from 'react'
 import { Button } from '@/components/ui/Button'
+import { Link } from 'react-router-dom'
 
-interface CTASectionProps {
+interface DemoCTAProps {
     ctaRef: RefObject<HTMLDivElement>
 }
 
-export const CTASection = ({ ctaRef }: CTASectionProps) => {
+export const DemoCTA = ({ ctaRef }: DemoCTAProps) => {
     return (
         <section ref={ctaRef} className="relative z-10 px-6 py-20">
             <div className="max-w-4xl mx-auto text-center">
@@ -25,19 +26,20 @@ export const CTASection = ({ ctaRef }: CTASectionProps) => {
                             {/* Icon */}
                             <div className="cta-icon mb-8">
                                 <div className="w-20 h-20 bg-gradient-to-br from-purple-500 via-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-2xl">
-                                    <TrendingUp className="w-10 h-10 text-white" />
+                                    <Play className="w-10 h-10 text-white" />
                                 </div>
                             </div>
                             
                             {/* Title */}
                             <h2 className="cta-title text-4xl md:text-6xl font-bold text-white mb-6 group-hover:text-gray-100 transition-colors">
-                                Prêt à Révolutionner votre Conformité ?
+                                Prêt à Tester Notre IA ?
                             </h2>
                             
                             {/* Subtitle */}
                             <p className="cta-subtitle text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed group-hover:text-gray-200 transition-colors">
-                                Rejoignez des milliers de professionnels de la conformité qui font confiance à ComplySummarize IA pour 
-                                maintenir leurs organisations sécurisées et conformes. Commencez votre parcours de conformité intelligent dès aujourd'hui.
+                                Maintenant que vous avez vu comment fonctionne ComplySummarize IA, 
+                                essayez-le avec vos propres documents de conformité. 
+                                Première analyse gratuite, résultats instantanés.
                             </p>
                             
                             {/* Buttons */}
@@ -46,36 +48,41 @@ export const CTASection = ({ ctaRef }: CTASectionProps) => {
                                     className="bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 hover:from-purple-700 hover:via-blue-700 hover:to-cyan-700 text-white text-lg px-10 py-4 rounded-xl group shadow-lg hover:shadow-2xl transition-all duration-300"
                                 >
                                     <Upload className="mr-3 w-5 h-5" />
-                                    Commencer l'Analyse de Conformité
+                                    Commencer l'Analyse Gratuite
                                     <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </Button>
-                                <Button 
-                                    variant="secondary" 
-                                    className="border-2 border-white/20 bg-white/5 backdrop-blur-sm text-white hover:bg-white/10 hover:border-white/30 text-lg px-10 py-4 rounded-xl transition-all duration-300"
-                                >
-                                    Voir les Plans Entreprise
-                                </Button>
+                                <Link to="/pricing">
+                                    <Button 
+                                        variant="secondary" 
+                                        className="border-2 border-white/20 bg-white/5 backdrop-blur-sm text-white hover:bg-white/10 hover:border-white/30 text-lg px-10 py-4 rounded-xl transition-all duration-300"
+                                    >
+                                        Voir tous les Plans
+                                    </Button>
+                                </Link>
                             </div>
 
-                            {/* Stats */}
-                            <div className="cta-stats flex flex-wrap items-center justify-center gap-8 text-sm text-gray-400">
-                                <div className="flex items-center group-hover:text-gray-300 transition-colors">
-                                    <div className="w-8 h-8 bg-yellow-500/20 rounded-lg flex items-center justify-center mr-3">
-                                        <Star className="w-4 h-4 text-yellow-400" />
+                            {/* Features highlight */}
+                            <div className="cta-features grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                                <div className="flex flex-col items-center group-hover:text-gray-300 transition-colors">
+                                    <div className="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-3">
+                                        <Zap className="w-6 h-6 text-emerald-400" />
                                     </div>
-                                    <span className="font-medium">Note 4,9/5</span>
+                                    <div className="text-sm font-medium text-white mb-1">Analyse Instantanée</div>
+                                    <div className="text-xs text-gray-400">Résultats en &lt;30 secondes</div>
                                 </div>
-                                <div className="flex items-center group-hover:text-gray-300 transition-colors">
-                                    <div className="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center mr-3">
-                                        <Users className="w-4 h-4 text-blue-400" />
+                                <div className="flex flex-col items-center group-hover:text-gray-300 transition-colors">
+                                    <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-3">
+                                        <Upload className="w-6 h-6 text-blue-400" />
                                     </div>
-                                    <span className="font-medium">+10K Docs de Conformité</span>
+                                    <div className="text-sm font-medium text-white mb-1">Multi-Formats</div>
+                                    <div className="text-xs text-gray-400">PDF, DOCX, TXT supportés</div>
                                 </div>
-                                <div className="flex items-center group-hover:text-gray-300 transition-colors">
-                                    <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center mr-3">
-                                        <Shield className="w-4 h-4 text-green-400" />
+                                <div className="flex flex-col items-center group-hover:text-gray-300 transition-colors">
+                                    <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-3">
+                                        <Play className="w-6 h-6 text-purple-400" />
                                     </div>
-                                    <span className="font-medium">Certifié SOC 2</span>
+                                    <div className="text-sm font-medium text-white mb-1">Sans Engagement</div>
+                                    <div className="text-xs text-gray-400">Premier test gratuit</div>
                                 </div>
                             </div>
                         </div>
