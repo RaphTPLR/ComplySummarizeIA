@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
-import { Brain, FileText, Target, Zap, Download, Share2, Loader } from 'lucide-react'
+import { Brain, FileText, Target, Zap, Download, Share2 } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+import Loader from '@/components/ui/Loader'
 import { AnalysisResult } from '../types'
 
 interface AnalysisPanelProps {
@@ -23,9 +24,12 @@ export const AnalysisPanel = ({ isProcessing, analysisResult }: AnalysisPanelPro
 
             <div className="space-y-6">
                 {isProcessing ? (
-                    <div className="text-center py-8">
-                        <Loader className="w-8 h-8 text-purple-400 mx-auto mb-4 animate-spin" />
-                        <p className="text-gray-300">Analyse en cours...</p>
+                    <div className="py-8">
+                        <Loader 
+                            size="md" 
+                            variant="analysis" 
+                            text="Analyse des documents en cours..."
+                        />
                     </div>
                 ) : analysisResult ? (
                     <>

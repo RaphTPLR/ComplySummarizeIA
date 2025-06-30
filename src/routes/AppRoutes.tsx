@@ -1,17 +1,16 @@
 import { useAutoLogin } from '@/api/queries/authQueries';
-import Loader from '@/components/ui/Loader';
+import { PageLoader } from '@/components/ui/PageLoader';
 import Login from '@/features/auth/Login';
 import Register from '@/features/auth/Register';
+import Demo from '@/features/demo/Demo';
 import Error from '@/features/Error';
+import Features from '@/features/features/Features';
 import Landing from '@/features/landing/Landing';
 import Pricing from '@/features/pricing/Pricing';
-import Demo from '@/features/demo/Demo';
-import Features from '@/features/features/Features';
-import Profile from '@/features/user/Profile';
+import ResumeTool from '@/features/resumetool/ResumeTool';
 import PrivateRoutes from '@/routes/PrivateRoutes';
 import PublicRoutes from '@/routes/PublicRoutes';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import ResumeTool from '@/features/resumetool/ResumeTool';
 
 const AppRoutes = () => {
   // const { isAuthenticated } = useAuthStore();
@@ -23,7 +22,7 @@ const AppRoutes = () => {
   //   autoLogin();
   // }, [autoLogin]);
 
-  if (isPending) return <Loader />
+  if (isPending) return <PageLoader />
 
 
   return (
