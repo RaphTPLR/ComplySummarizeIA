@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Brain, FileText, Target, Zap, Download, Share2 } from 'lucide-react'
+import { Brain, FileText, Target, Zap, Download, Share2, Clock, Cpu, FileCheck } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import Loader from '@/components/ui/Loader'
 import { AnalysisResult } from '../types'
@@ -22,7 +22,7 @@ export const AnalysisPanel = ({ isProcessing, analysisResult }: AnalysisPanelPro
                 Analyse IA
             </h3>
 
-            <div className="space-y-6">
+            <div className="space-y-6 max-h-[70vh] overflow-y-auto scrollbar-simple pr-2">
                 {isProcessing ? (
                     <div className="py-8">
                         <Loader 
@@ -33,6 +33,40 @@ export const AnalysisPanel = ({ isProcessing, analysisResult }: AnalysisPanelPro
                     </div>
                 ) : analysisResult ? (
                     <>
+                        {/* Backend Metadata */}
+                        {analysisResult.metadata && (
+                            <div className="p-3 bg-white/5 rounded-lg border border-white/10">
+                                <h4 className="font-semibold text-white mb-2 flex items-center">
+                                    <Cpu className="w-4 h-4 mr-2 text-blue-400" />
+                                    Informations de Traitement
+                                </h4>
+                                <div className="grid grid-cols-2 gap-2 text-xs">
+                                    {analysisResult.metadata.model_used && (
+                                        <div className="text-gray-300">
+                                            <span className="text-blue-400">Modèle:</span> {analysisResult.metadata.model_used}
+                                        </div>
+                                    )}
+                                    {analysisResult.metadata.processing_time && (
+                                        <div className="text-gray-300 flex items-center">
+                                            <Clock className="w-3 h-3 mr-1 text-emerald-400" />
+                                            {analysisResult.metadata.processing_time.toFixed(2)}s
+                                        </div>
+                                    )}
+                                    {analysisResult.metadata.tokens_used && (
+                                        <div className="text-gray-300">
+                                            <span className="text-purple-400">Tokens:</span> {analysisResult.metadata.tokens_used}
+                                        </div>
+                                    )}
+                                    {analysisResult.metadata.document_info?.pages && (
+                                        <div className="text-gray-300 flex items-center">
+                                            <FileCheck className="w-3 h-3 mr-1 text-cyan-400" />
+                                            {analysisResult.metadata.document_info.pages} page(s)
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        )}
+
                         {/* Summary */}
                         <div>
                             <h4 className="font-semibold text-white mb-2 flex items-center">
@@ -78,11 +112,19 @@ export const AnalysisPanel = ({ isProcessing, analysisResult }: AnalysisPanelPro
 
                         {/* Compliance Score */}
                         <div className="p-4 bg-white/5 rounded-lg">
-                            <h4 className="font-semibold text-white mb-2">Score de Conformité</h4>
+                            <h4 className="font-semibold text-white mb-2">
+                                Score de Conformité - Niveau: {analysisResult.riskLevel}
+                            </h4>
                             <div className="flex items-center space-x-3">
                                 <div className="flex-1 bg-gray-700 rounded-full h-2">
                                     <div
-                                        className="bg-gradient-to-r from-emerald-500 to-green-500 h-2 rounded-full"
+                                        className={`h-2 rounded-full ${
+                                            analysisResult.complianceScore >= 80 
+                                                ? 'bg-gradient-to-r from-emerald-500 to-green-500'
+                                                : analysisResult.complianceScore >= 60
+                                                ? 'bg-gradient-to-r from-yellow-500 to-orange-500'
+                                                : 'bg-gradient-to-r from-red-500 to-red-600'
+                                        }`}
                                         style={{ width: `${analysisResult.complianceScore}%` }}
                                     ></div>
                                 </div>
