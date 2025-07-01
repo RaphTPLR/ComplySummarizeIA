@@ -84,7 +84,7 @@ export const HeroSection = ({
                                 </div>
                                 <h3 className="text-2xl font-bold text-white mb-4">Déposez vos Documents de Conformité</h3>
                                 <p className="text-gray-300 mb-6 max-w-md">
-                                    Support pour PDF, DOCX, TXT et plus. Contrats, politiques, réglementations, rapports d'audit - nous gérons tout.
+                                    Support pour PDF. Contrats, politiques, réglementations, rapports d'audit - nous gérons tout.
                                 </p>
                                 <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-lg px-8 py-4 group" onClick={() => navigate('/home')}>
                                     <Upload className="mr-2 w-5 h-5" />

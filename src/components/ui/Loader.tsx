@@ -46,7 +46,7 @@ const Loader = ({ size = 'md', text = 'Chargement...', variant = 'default' }: Lo
     const config = getVariantConfig()
     const IconComponent = config.icon
 
-    return (
+  return (
         <div className="flex flex-col items-center justify-center space-y-6 p-8">
             {/* Main Loader Container */}
             <div className="relative">
@@ -168,7 +168,7 @@ const Loader = ({ size = 'md', text = 'Chargement...', variant = 'default' }: Lo
                 />
             </div>
         </div>
-    )
+  )
 }
 
 export default Loader

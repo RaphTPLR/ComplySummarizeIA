@@ -17,7 +17,7 @@ export const PricingFAQ = ({ faqRef }: PricingFAQProps) => {
         },
         {
             question: "Quels formats de documents sont supportés ?",
-            answer: "Nous supportons PDF, DOCX, TXT, RTF et de nombreux autres formats. Notre système peut traiter des contrats, rapports, normes, politiques et tout type de document textuel."
+            answer: "Nous supportons PDF. Notre système peut traiter des contrats, rapports, normes, politiques et tout type de document textuel."
         },
         {
             question: "Mes données sont-elles sécurisées ?",

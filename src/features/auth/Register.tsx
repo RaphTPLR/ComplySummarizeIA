@@ -84,14 +84,14 @@ export default function Register() {
           >
             {/* Logo and Title */}
             <div className="text-center mb-8">
-              <motion.div
+        <motion.div
                 className="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 0.2, type: "spring", stiffness: 260, damping: 20 }}
-              >
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0.2, type: "spring", stiffness: 260, damping: 20 }}
+        >
                 <Target className="w-8 h-8 text-white" />
-              </motion.div>
+        </motion.div>
               
               <motion.h1
                 className="text-3xl font-bold text-white mb-2"
@@ -149,20 +149,20 @@ export default function Register() {
                     <div className="text-center mb-6">
                       <h3 className="text-lg font-semibold text-white mb-2">Informations personnelles</h3>
                       <p className="text-sm text-gray-400">Commençons par vos informations de base</p>
-                    </div>
+      </div>
 
                     {/* Name Inputs */}
-                    <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <label className="block text-sm font-medium text-gray-300">
                           <User className="w-4 h-4 inline mr-2" />
                           Prénom
                         </label>
                         <div className="relative">
-                          <Input
+            <Input
                             label=""
-                            {...register("firstName")}
-                            placeholder="Jean"
+              {...register("firstName")}
+              placeholder="Jean"
                             className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
                           />
                           {errors.firstName && (
@@ -177,18 +177,18 @@ export default function Register() {
                           Nom
                         </label>
                         <div className="relative">
-                          <Input
+            <Input
                             label=""
-                            {...register("lastName")}
-                            placeholder="Dupont"
+              {...register("lastName")}
+              placeholder="Dupont"
                             className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
-                          />
+            />
                           {errors.lastName && (
                             <p className="mt-1 text-sm text-red-400">{errors.lastName.message}</p>
                           )}
                         </div>
                       </div>
-                    </div>
+          </div>
 
                     {/* Email Input */}
                     <div className="space-y-2">
@@ -197,11 +197,11 @@ export default function Register() {
                         Adresse email
                       </label>
                       <div className="relative">
-                        <Input
+          <Input
                           label=""
-                          type="email"
-                          {...register("email")}
-                          placeholder="votre@email.com"
+            type="email"
+            {...register("email")}
+            placeholder="votre@email.com"
                           className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
                         />
                         {errors.email && (
@@ -246,11 +246,11 @@ export default function Register() {
                         Mot de passe
                       </label>
                       <div className="relative">
-                        <Input
+          <Input
                           label=""
-                          type="password"
-                          {...register("password")}
-                          placeholder="••••••••"
+            type="password"
+            {...register("password")}
+            placeholder="••••••••"
                           className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
                         />
                         {errors.password && (
@@ -266,18 +266,18 @@ export default function Register() {
                         Confirmer le mot de passe
                       </label>
                       <div className="relative">
-                        <Input
+          <Input
                           label=""
-                          type="password"
-                          {...register("confirmPassword")}
-                          placeholder="••••••••"
+            type="password"
+            {...register("confirmPassword")}
+            placeholder="••••••••"
                           className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
-                        />
+          />
                         {errors.confirmPassword && (
                           <p className="mt-1 text-sm text-red-400">{errors.confirmPassword.message}</p>
                         )}
                       </div>
-                    </div>
+        </div>
 
                     {/* Navigation Buttons */}
                     <div className="flex gap-4">
@@ -293,8 +293,8 @@ export default function Register() {
                         </span>
                       </Button>
 
-                      <Button
-                        type="submit"
+        <Button
+          type="submit"
                         disabled={isSubmitting || isPending}
                         className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-medium py-3 px-6 rounded-xl transition-all duration-300 group"
                       >
@@ -309,7 +309,7 @@ export default function Register() {
                             Créer le compte
                           </span>
                         )}
-                      </Button>
+        </Button>
                     </div>
                   </motion.div>
                 )}
@@ -319,8 +319,8 @@ export default function Register() {
               <div className="text-center pt-4">
                 <p className="text-gray-400 text-sm">
                   Déjà un compte ?{' '}
-                  <Link
-                    to="/login"
+          <Link
+            to="/login"
                     className="text-purple-400 hover:text-purple-300 font-medium transition-colors duration-300"
                   >
                     Se connecter
@@ -360,7 +360,7 @@ export default function Register() {
               {' '}et notre{' '}
               <Link to="/privacy" className="text-purple-400 hover:text-purple-300 transition-colors">
                 politique de confidentialité
-              </Link>
+          </Link>
             </p>
           </motion.div>
         </div>

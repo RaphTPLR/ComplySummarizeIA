@@ -77,8 +77,8 @@ export const DemoCTA = ({ ctaRef }: DemoCTAProps) => {
                                     <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-3">
                                         <Upload className="w-6 h-6 text-blue-400" />
                                     </div>
-                                    <div className="text-sm font-medium text-white mb-1">Multi-Formats</div>
-                                    <div className="text-xs text-gray-400">PDF, DOCX, TXT supportés</div>
+                                    <div className="text-sm font-medium text-white mb-1">Format</div>
+                                    <div className="text-xs text-gray-400">PDF</div>
                                 </div>
                                 <div className="flex flex-col items-center group-hover:text-gray-300 transition-colors">
                                     <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-3">
