@@ -112,6 +112,23 @@ export default function ResumeTool() {
         }
     }
 
+    // Fonction pour réinitialiser tous les états
+    const resetAll = () => {
+        setUploadedFiles([])
+        setAnalysisResult(null)
+        setError(null)
+        setIsProcessing(false)
+        setSelectedTool('analyze') // Retour à l'outil par défaut
+        
+        // Réinitialiser aussi l'input file
+        const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement
+        if (fileInput) {
+            fileInput.value = ''
+        }
+        
+        console.log('🔄 Application réinitialisée')
+    }
+
     return (
         <PageLayout>
             {/* Tool Interface */}
@@ -137,6 +154,7 @@ export default function ResumeTool() {
                             processDocuments={processDocuments}
                             uploadedFiles={uploadedFiles}
                             isProcessing={isProcessing}
+                            resetAll={resetAll}
                         />
 
                         {/* Right Panel - AI Response */}

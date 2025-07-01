@@ -10,6 +10,7 @@ interface ToolsPanelProps {
     processDocuments: () => void
     uploadedFiles: File[]
     isProcessing: boolean
+    resetAll: () => void
 }
 
 export const ToolsPanel = ({
@@ -18,7 +19,8 @@ export const ToolsPanel = ({
     setSelectedTool,
     processDocuments,
     uploadedFiles,
-    isProcessing
+    isProcessing,
+    resetAll
 }: ToolsPanelProps) => {
     return (
         <motion.div
@@ -79,6 +81,7 @@ export const ToolsPanel = ({
                     )}
                 </Button>
                 <Button
+                    onClick={resetAll}
                     variant="secondary"
                     className="w-full border-white/20 bg-white/5 text-white hover:bg-white/10 py-3"
                 >
