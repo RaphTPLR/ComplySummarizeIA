@@ -12,11 +12,11 @@ interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
-    primary: "bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 text-white",
-    secondary: "bg-gray-600 hover:bg-gray-700 focus:ring-gray-500 text-white",
-    danger: "bg-red-600 hover:bg-red-700 focus:ring-red-500 text-white",
-    success: "bg-green-600 hover:bg-green-700 focus:ring-green-500 text-white",
-    warning: "bg-yellow-500 hover:bg-yellow-600 focus:ring-yellow-400 text-black",
+    primary: "bg-blue-600 hover:bg-blue-700 text-white",
+    secondary: "bg-gray-600 hover:bg-gray-700 text-white",
+    danger: "bg-red-600 hover:bg-red-700 text-white",
+    success: "bg-green-600 hover:bg-green-700 text-white",
+    warning: "bg-yellow-500 hover:bg-yellow-600 text-black",
     outline: "border border-gray-600 bg-transparent text-gray-300 hover:text-pink-400 text-lg px-8 py-4 group"
 }
 
@@ -30,15 +30,13 @@ export const Button: React.FC<ButtonProps> = ({
     ...props
 }) => {
     const baseStyle =
-        "group relative w-full flex justify-center items-center py-2 px-4 border border-transparent text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 transition duration-150 ease-in-out"
+        "group relative w-full flex justify-center items-center py-2 px-4 border border-transparent text-sm font-medium rounded-md focus:outline-none transition duration-150 ease-in-out"
     const variantStyle = variantStyles[variant]
     const disabledStyle = "opacity-50 cursor-not-allowed"
 
     return (
         <div>
             <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
                 disabled={disabled || isLoading}
                 className={`${baseStyle} ${variantStyle} ${disabled || isLoading ? disabledStyle : ""} ${className}`}
                 {...props}

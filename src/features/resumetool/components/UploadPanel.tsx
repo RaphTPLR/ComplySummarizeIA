@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Upload, FileText, Check, FileImage, FileSpreadsheet, File } from 'lucide-react'
+import { Check, File, FileText, Upload } from 'lucide-react'
 
 interface UploadPanelProps {
     uploadedFiles: File[]
@@ -12,16 +12,6 @@ export const UploadPanel = ({ uploadedFiles, handleFileUpload }: UploadPanelProp
         switch (ext) {
             case 'pdf':
                 return FileText
-            case 'doc':
-            case 'docx':
-                return FileText
-            case 'jpg':
-            case 'jpeg':
-            case 'png':
-                return FileImage
-            case 'xls':
-            case 'xlsx':
-                return FileSpreadsheet
             default:
                 return File
         }
@@ -44,7 +34,7 @@ export const UploadPanel = ({ uploadedFiles, handleFileUpload }: UploadPanelProp
                     <input
                         type="file"
                         multiple
-                        accept=".pdf,.doc,.docx,.txt,.jpg,.png"
+                        accept=".pdf"
                         onChange={handleFileUpload}
                         className="hidden"
                         id="file-upload"
@@ -55,7 +45,7 @@ export const UploadPanel = ({ uploadedFiles, handleFileUpload }: UploadPanelProp
                             Glissez vos documents ici ou cliquez pour sélectionner
                         </p>
                         <p className="text-xs text-gray-400">
-                            Formats supportés: PDF, DOC, DOCX, TXT, JPG, PNG
+                            Formats supportés: PDF
                         </p>
                     </label>
                 </div>

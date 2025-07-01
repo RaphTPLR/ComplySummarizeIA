@@ -11,7 +11,7 @@
 - **Scoring de conformité** en temps réel
 
 ### 📄 Gestion de Documents
-- **Support multi-formats** : PDF, DOC, DOCX, TXT, JPG, PNG
+- **Support format** : PDF
 - **Upload sécurisé** avec limite de 50MB
 - **Versioning intelligent** et métadonnées automatiques
 - **Traitement en temps réel** (<30 secondes)

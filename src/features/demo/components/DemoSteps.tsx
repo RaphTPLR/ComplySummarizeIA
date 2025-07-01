@@ -14,11 +14,11 @@ export const DemoSteps = ({ stepsRef }: DemoStepsProps) => {
         {
             id: 1,
             title: "Upload du Document",
-            description: "L'utilisateur télécharge son document de conformité (PDF, DOCX, TXT) via notre interface sécurisée.",
+            description: "L'utilisateur télécharge son document de conformité (PDF) via notre interface sécurisée.",
             icon: Upload,
             color: "from-purple-500 to-purple-600",
             details: [
-                "Support multi-formats (PDF, DOCX, TXT, RTF)",
+                "Support format (PDF)",
                 "Upload sécurisé avec chiffrement",
                 "Validation automatique du format",
                 "Taille maximum 50MB par document"

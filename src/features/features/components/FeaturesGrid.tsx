@@ -51,10 +51,10 @@ export const FeaturesGrid = ({ gridRef }: FeaturesGridProps) => {
             color: "from-blue-500 to-cyan-500",
             features: [
                 {
-                    title: "Support Multi-Formats",
-                    description: "Compatible avec PDF, DOCX, TXT, RTF, et plus",
+                    title: "Support Format",
+                    description: "Compatible avec PDF",
                     pros: [
-                        "15+ formats supportés nativement",
+                        "1 format supportés nativement",
                         "Conversion automatique entre formats",
                         "Préservation des métadonnées"
                     ],

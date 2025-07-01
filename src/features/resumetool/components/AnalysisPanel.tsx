@@ -3,6 +3,9 @@ import { Brain, FileText, Target, Zap, Download, Share2, Clock, Cpu, FileCheck }
 import { Button } from '@/components/ui/Button'
 import Loader from '@/components/ui/Loader'
 import { AnalysisResult } from '../types'
+import { PDFExportService } from '@/services/pdfExportService'
+import { PDFTestService } from '@/services/pdfTestService'
+import { useState } from 'react'
 
 interface AnalysisPanelProps {
     isProcessing: boolean
@@ -10,6 +13,70 @@ interface AnalysisPanelProps {
 }
 
 export const AnalysisPanel = ({ isProcessing, analysisResult }: AnalysisPanelProps) => {
+    const [isExporting, setIsExporting] = useState(false)
+
+    const handleExportPDF = async () => {
+        if (!analysisResult) return
+
+        setIsExporting(true)
+        try {
+            await PDFExportService.exportAnalysis(analysisResult, {
+                fileName: `analyse-conformite-${new Date().toISOString().split('T')[0]}.pdf`,
+                includeMetadata: true
+            })
+        } catch (error) {
+            console.error('Erreur lors de l\'export PDF:', error)
+            // Ici vous pourriez ajouter une notification d'erreur
+        } finally {
+            setIsExporting(false)
+        }
+    }
+
+    const handleShareEmail = () => {
+        if (!analysisResult) return
+
+        // Création du contenu de l'email
+        const subject = encodeURIComponent('Rapport d\'Analyse de Conformité - ComplySummarize IA')
+        
+        const emailBody = `
+Bonjour,
+
+Je partage avec vous un rapport d'analyse de conformité généré par ComplySummarize IA.
+
+📊 SCORE DE CONFORMITÉ: ${analysisResult.complianceScore}%
+🎯 NIVEAU DE RISQUE: ${analysisResult.riskLevel}
+
+📋 RÉSUMÉ EXÉCUTIF:
+${analysisResult.summary}
+
+🔍 POINTS CLÉS IDENTIFIÉS:
+${analysisResult.keyPoints.map((point, index) => `${index + 1}. ${point}`).join('\n')}
+
+⚡ ACTIONS RECOMMANDÉES:
+${analysisResult.suggestedActions.map((action, index) => `${index + 1}. ${action}`).join('\n')}
+
+${analysisResult.metadata ? `
+📈 INFORMATIONS TECHNIQUES:
+- Modèle IA: ${analysisResult.metadata.model_used || 'N/A'}
+- Temps de traitement: ${analysisResult.metadata.processing_time?.toFixed(2) || 'N/A'}s
+- Tokens utilisés: ${analysisResult.metadata.tokens_used || 'N/A'}
+- Pages analysées: ${analysisResult.metadata.document_info?.pages || 'N/A'}
+` : ''}
+
+Ce rapport a été généré automatiquement le ${new Date().toLocaleDateString('fr-FR')} à ${new Date().toLocaleTimeString('fr-FR', {hour: '2-digit', minute: '2-digit'})}.
+
+Pour plus d'informations ou pour générer vos propres analyses, visitez ComplySummarize IA.
+
+Cordialement
+        `.trim()
+
+        // URL Gmail avec paramètres pré-remplis
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&tf=1&su=${subject}&body=${encodeURIComponent(emailBody)}`
+        
+        // Ouvrir Gmail dans un nouvel onglet
+        window.open(gmailUrl, '_blank')
+    }
+
     return (
         <motion.div
             className="lg:col-span-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6"
@@ -134,13 +201,30 @@ export const AnalysisPanel = ({ isProcessing, analysisResult }: AnalysisPanelPro
 
                         {/* Export Options */}
                         <div className="space-y-2">
-                            <Button className="w-full bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white py-2 text-sm">
-                                <Download className="w-4 h-4 mr-2" />
-                                Exporter PDF
+                            <Button 
+                                onClick={handleExportPDF}
+                                disabled={isExporting}
+                                className="w-full bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white py-2 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                                {isExporting ? (
+                                    <>
+                                        <div className="w-4 h-4 mr-2 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
+                                        Génération...
+                                    </>
+                                ) : (
+                                    <>
+                                        <Download className="w-4 h-4 mr-2" />
+                                        Exporter PDF
+                                    </>
+                                )}
                             </Button>
-                            <Button variant="secondary" className="w-full border-white/20 bg-white/5 text-white hover:bg-white/10 py-2 text-sm">
+                            <Button 
+                                onClick={handleShareEmail}
+                                variant="secondary" 
+                                className="w-full border-white/20 bg-white/5 text-white hover:bg-white/10 py-2 text-sm"
+                            >
                                 <Share2 className="w-4 h-4 mr-2" />
-                                Partager
+                                Partager par Email
                             </Button>
                         </div>
                     </>

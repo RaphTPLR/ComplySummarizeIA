@@ -31,7 +31,7 @@ export const PricingCards = ({ pricingRef }: PricingCardsProps) => {
                 "Résumés automatiques",
                 "Points clés extraits",
                 "Support par email",
-                "Formats PDF, DOCX",
+                "Format PDF",    
                 "Historique 30 jours"
             ],
             limitations: [
